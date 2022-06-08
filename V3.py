@@ -67,22 +67,22 @@ def animate(i, x, t, h, f, hic):
         x.append(i)
         t.append(relProb_float_1)
         h.append(relProb_float_2)
-        f.append(relProb_float_3)
-        hic.append(relProb_float_4)
+        f.append(relProb_float_1)
+        hic.append(relProb_float_1)
 
-        # print(' '.join(map(str,x)))
-        # print(' '.join(map(str,t)))
-        # print(' '.join(map(str,h)))
-        # print(' '.join(map(str,f)))
-        # print(' '.join(map(str,hic)))
+        print(' '.join(map(str,x)))
+        print(' '.join(map(str,t)))
+        print(' '.join(map(str,h)))
+        print(' '.join(map(str,f)))
+        print(' '.join(map(str,hic)))
 
         # print(len(x))
         # print(len(y))
-        x=x[-30:]   
-        t=t[-30:]
-        h=h[-30:]
-        f=f[-30:]
-        hic=hic[-30:]
+        x=x[-20:]   
+        t=t[-20:]
+        h=h[-20:]
+        f=f[-20:]
+        hic=hic[-20:]
 
         ax.clear()
         ay.clear()
@@ -108,8 +108,8 @@ def animate(i, x, t, h, f, hic):
 
         # plt.subplot(2,2,2)
         ay.plot(x,h,color='black',linestyle='dashed',linewidth=1,marker ='o',markerfacecolor='green',markersize=4,label = "Humi")
-        ay.set_xlabel('Time')
-        ay.set_ylabel('Humidity')
+        ax.set_xlabel('Time')
+        ax.set_ylabel('Humidity')
 
         # plt.xlabel('Time')
         # plt.ylabel('Humidity')
@@ -120,8 +120,8 @@ def animate(i, x, t, h, f, hic):
 
         # plt.subplot(2,2,3)
         az.plot(x,f,color='black',linestyle='dashed',linewidth=1,marker ='o',markerfacecolor='red',markersize=4,label = "HI")
-        az.set_xlabel('Time')
-        az.set_ylabel('HI')
+        ax.set_xlabel('Time')
+        ax.set_ylabel('HI')
         
         
         # plt.xlabel('Time')
@@ -130,8 +130,8 @@ def animate(i, x, t, h, f, hic):
 
         # plt.subplot(2,2,4)
         aa.plot(x,hic,color='black',linestyle='dashed',linewidth=1,marker ='o',markerfacecolor='yellow',markersize=4,label = "Lux")
-        aa.set_xlabel('Time')
-        aa.set_ylabel('Lux')
+        ax.set_xlabel('Time')
+        ax.set_ylabel('Lux')
         
         # plt.xlabel('Time')
         # plt.ylabel('Lux')
