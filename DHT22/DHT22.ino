@@ -19,7 +19,7 @@ void setup() {
 
 void loop() {
   // Wait a few seconds between measurements.
-  delay(2000);
+
   float h = dht.readHumidity();
   // Read temperature as Celsius (the default)
   float t = dht.readTemperature();
@@ -43,7 +43,7 @@ void loop() {
   Serial.print(hic);
   Serial.print('\n');
   i = i + 1;
-
+  delay(60000);
   //  Serial.print(F("Humidity: "));
   //  Serial.print(h);
   //  Serial.print(F("%  Temperature: "));
