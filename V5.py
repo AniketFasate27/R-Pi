@@ -14,7 +14,7 @@ d = {'Humitdity': [],'Temp': [],'Heat index':[],'Lux':[]}
 dataFrame = pd.DataFrame(d)
 print("DataFrame...\n",dataFrame)
 # write dataFrame to SalesRecords CSV file
-dataFrame.to_csv("C:\\Users\\anifa\\Desktop\\GITB\\R-Pi\\SalesRecords.csv")
+dataFrame.to_csv("C:\\Users\\anifa\\Desktop\\GITB\\R-Pi\\Data_logger.csv")
 
 now = datetime.now()
 

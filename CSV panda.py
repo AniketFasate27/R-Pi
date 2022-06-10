@@ -9,7 +9,7 @@ dataFrame = pd.DataFrame(d)
 print("DataFrame...\n",dataFrame)
 
 # write dataFrame to SalesRecords CSV file
-# dataFrame.to_csv("C:\\Users\\anifa\\Desktop\\GITB\\R-Pi\\SalesRecords.csv")
+dataFrame.to_csv("C:\\Users\\anifa\\Desktop\\GITB\\R-Pi\\SalesRecords.csv")
 
 # display the contents of the output csv
 print("The output csv file written successfully and generated...")
