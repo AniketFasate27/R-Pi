@@ -9,12 +9,27 @@
 #define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 DHT dht(DHTPIN, DHTTYPE);
 int i = 1;
-
+int chipid;
+char id_[6];
+char id_1[10];
+char kid[12];
+char k_id[12];
+String device_id;
 void setup() {
   Serial.begin(115200);
   //Serial.println(F("DHTxx test!"));
 
   dht.begin();
+  chipid = ESP.getEfuseMac(); //The chip ID is essentially its MAC address(length: 6 bytes).
+  sprintf(id_, "%04X", (uint16_t)(chipid >> 32));
+  sprintf(id_1, "%08X\n", (uint32_t)chipid);
+  strcat(kid, id_);
+  strcat(kid, id_1);
+  sprintf(k_id, "%c%c%c%c%c%c%c%c%c%c%c%c", kid[10], kid[11], kid[8], kid[9], kid[6], kid[7], kid[4], kid[5], kid[2], kid[3], kid[0], kid[1]);//k_id is the ssid name of AP
+  Serial.println(k_id);
+  device_id = String(k_id);
+
+  
 }
 
 void loop() {
@@ -32,7 +47,7 @@ void loop() {
   float hic = dht.computeHeatIndex(t, h, false);
 
 
-  Serial.print(i);
+  Serial.print(device_id);
   Serial.print(',');
   Serial.print(h);
   Serial.print(',');
