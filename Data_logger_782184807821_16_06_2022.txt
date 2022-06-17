@@ -1,0 +1,6 @@
+id, Humidity, Temprature, HI, Lux
+75.8
+75.827.2
+
+27.1
+
