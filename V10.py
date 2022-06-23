@@ -36,7 +36,7 @@ def animate(i, x, t, h, f, hic):
     
     # Reading all bytes available bytes till EOL
     line = ser.readline() 
-    if line:
+    try line:
         # Converting Byte Strings into unicode strings
         # string = line.decode()  
         # Converting Unicode String into integer
@@ -136,6 +136,8 @@ def animate(i, x, t, h, f, hic):
         aa.set_ylim([0,max(hic)+10])
 
         plt.tight_layout()
+    except:
+        print("Not found Values")
        
 
 ani = animation.FuncAnimation(fig, animate, fargs=(x, t, h, f, hic), interval=1)
